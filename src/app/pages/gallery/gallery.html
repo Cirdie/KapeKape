@@ -1,0 +1,81 @@
+<section class="page-hero">
+  <div class="container">
+    <p class="section-tag"><i class="fas fa-camera"></i> Visual Journey</p>
+    <h1>Our Gallery</h1>
+    <p>A glimpse into the Chai & Brew world — captured in frames</p>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+
+    <!-- Filter -->
+    <div class="filter-tabs mb-5">
+      <button
+        class="filter-tab"
+        [class.active]="activeFilter === 'all'"
+        (click)="setFilter('all')"
+      >
+        All
+      </button>
+
+      <button
+        class="filter-tab"
+        [class.active]="activeFilter === 'coffee'"
+        (click)="setFilter('coffee')"
+      >
+        Coffee Art
+      </button>
+
+      <button
+        class="filter-tab"
+        [class.active]="activeFilter === 'interior'"
+        (click)="setFilter('interior')"
+      >
+        Interiors
+      </button>
+
+      <button
+        class="filter-tab"
+        [class.active]="activeFilter === 'food'"
+        (click)="setFilter('food')"
+      >
+        Food
+      </button>
+
+      <button
+        class="filter-tab"
+        [class.active]="activeFilter === 'events'"
+        (click)="setFilter('events')"
+      >
+        Events
+      </button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="row g-3">
+      <div
+        class="col-md-4 col-6"
+        *ngFor="let item of filteredGalleryItems"
+      >
+        <div class="gallery-item fade-up" (click)="openLightbox(item.image, item.alt)">
+          <img [src]="item.image" [alt]="item.alt" loading="lazy" />
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox-backdrop" *ngIf="selectedImage" (click)="closeLightbox()">
+  <div class="lightbox-content" (click)="$event.stopPropagation()">
+    <img [src]="selectedImage" [alt]="selectedAlt" class="lightbox-image" />
+    <button type="button" class="lightbox-close" (click)="closeLightbox()">
+      ×
+    </button>
+  </div>
+</div>

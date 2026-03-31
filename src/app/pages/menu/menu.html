@@ -1,0 +1,613 @@
+<section class="page-hero">
+  <div class="container">
+    <p class="section-tag"><i class="fas fa-utensils"></i> Our Offerings</p>
+    <h1>Our Menu</h1>
+    <p>Crafted with passion — from our roastery to your cup</p>
+
+    <nav aria-label="breadcrumb" class="mt-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item active">Menu</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+    <!-- Filter Tabs -->
+    <div class="filter-tabs">
+      <button
+        class="filter-tab"
+        [class.active]="selectedFilter === 'all'"
+        (click)="setFilter('all')">
+        All Items
+      </button>
+
+      <button
+        class="filter-tab"
+        [class.active]="selectedFilter === 'hot-coffee'"
+        (click)="setFilter('hot-coffee')">
+        Hot Coffee
+      </button>
+
+      <button
+        class="filter-tab"
+        [class.active]="selectedFilter === 'cold-coffee'"
+        (click)="setFilter('cold-coffee')">
+        Cold Coffee
+      </button>
+
+      <button
+        class="filter-tab"
+        [class.active]="selectedFilter === 'chai'"
+        (click)="setFilter('chai')">
+        Chai & Tea
+      </button>
+
+      <button
+        class="filter-tab"
+        [class.active]="selectedFilter === 'food'"
+        (click)="setFilter('food')">
+        Food & Snacks
+      </button>
+
+      <button
+        class="filter-tab"
+        [class.active]="selectedFilter === 'desserts'"
+        (click)="setFilter('desserts')">
+        Desserts
+      </button>
+    </div>
+
+    <!-- Hot Coffee -->
+    <div class="menu-section" *ngIf="isVisible('hot-coffee')">
+      <div class="section-header mb-4">
+        <p class="section-tag"><i class="fas fa-fire"></i> Hot Beverages</p>
+        <h2 class="section-title">Hot Coffee</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Espresso"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Kapeng Barako</h5>
+              </div>
+            <p>A strong and aromatic Filipino coffee made from locally loved beans, perfect for a bold start to your day.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 95</span>
+                <span class="badge bg-warning text-dark">Bestseller</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Cappuccino"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Cloud Foam Cappuccino</h5>
+              </div>
+              <p>Espresso topped with silky steamed milk and thick foam.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 145</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Filter Coffee"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Heritage Filter Brew</h5>
+              </div>
+              <p>Slow-brewed coffee with a strong aroma and comforting taste.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 85</span>
+                <span class="badge bg-danger">Must Try</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Flat White"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Silky Flat White</h5>
+              </div>
+              <p>Velvety microfoam over a smooth double espresso shot.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 155</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Latte"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Creamy Café Latte</h5>
+              </div>
+              <p>Smooth espresso blended with generous steamed milk.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 150</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Mocha"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Golden Caramel Mocha</h5>
+              </div>
+              <p>Chocolate espresso topped with caramel drizzle and milk.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 175</span>
+                <span class="badge bg-success">New</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Americano"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Roaster's Americano</h5>
+              </div>
+              <p>Clean and bold espresso stretched with hot water.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 110</span>
+                <span class="badge bg-info text-dark">Added</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-5" style="border-color:#F5E6C8" *ngIf="isVisible('hot-coffee')" />
+
+    <!-- Cold Coffee -->
+    <div class="menu-section" *ngIf="isVisible('cold-coffee')">
+      <div class="section-header mb-4">
+        <p class="section-tag"><i class="fas fa-snowflake"></i> Chilled Brews</p>
+        <h2 class="section-title">Cold Coffee</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Cold Brew"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Midnight Cold Brew</h5>
+              </div>
+              <p>Slow-steeped coffee that is crisp, smooth, and naturally sweet.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 165</span>
+                <span class="badge bg-warning text-dark">Popular</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Frappuccino"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Iced Coffee Blast</h5>
+              </div>
+              <p>Blended iced coffee with whipped cream and caramel topping.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 185</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Dalgona"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Whipped Dalgona Dream</h5>
+              </div>
+              <p>Fluffy whipped coffee over chilled milk for a creamy sip.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 170</span>
+                <span class="badge bg-success">New</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Iced Latte"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Vanilla Ice Latte</h5>
+              </div>
+              <p>Chilled espresso and milk with a sweet vanilla finish.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 160</span>
+                <span class="badge bg-info text-dark">Added</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-5" style="border-color:#F5E6C8" *ngIf="isVisible('cold-coffee')" />
+
+    <!-- Chai -->
+    <div class="menu-section" *ngIf="isVisible('chai')">
+      <div class="section-header mb-4">
+        <p class="section-tag"><i class="fas fa-leaf"></i> Teas & Chai</p>
+        <h2 class="section-title">Chai & Tea</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Masala Chai"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Spiced Chai Comfort</h5>
+              </div>
+              <p>Warm tea infused with ginger, cinnamon, and cardamom.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 120</span>
+                <span class="badge bg-warning text-dark">Bestseller</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Matcha"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Zen Matcha Latte</h5>
+              </div>
+              <p>Premium matcha blended with creamy milk for a smooth finish.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 175</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Kadak Chai"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Strong Ginger Tea</h5>
+              </div>
+              <p>Full-bodied tea brewed strong with a fresh ginger kick.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 75</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-5" style="border-color:#F5E6C8" *ngIf="isVisible('chai')" />
+
+    <!-- Food -->
+    <div class="menu-section" *ngIf="isVisible('food')">
+      <div class="section-header mb-4">
+        <p class="section-tag"><i class="fas fa-utensils"></i> Food</p>
+        <h2 class="section-title">Snacks & Bites</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Croissant"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Butter Croissant</h5>
+              </div>
+              <p>Freshly baked flaky croissant with rich buttery layers.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 120</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Vada Pav"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Loaded Vada Pav</h5>
+              </div>
+              <p>Spiced potato filling in a soft bun with flavorful chutneys.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 95</span>
+                <span class="badge bg-danger">Indian Special</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Sandwich"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Club Sandwich</h5>
+              </div>
+              <p>Toasted layered sandwich with cheese, veggies, and mayo.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 155</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-5" style="border-color:#F5E6C8" *ngIf="isVisible('food')" />
+
+    <!-- Desserts -->
+    <div class="menu-section" *ngIf="isVisible('desserts')">
+      <div class="section-header mb-4">
+        <p class="section-tag"><i class="fas fa-birthday-cake"></i> Desserts</p>
+        <h2 class="section-title">Sweet Indulgences</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Tiramisu"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Coffee Tiramisu</h5>
+              </div>
+              <p>Classic layered dessert with espresso notes and creamy mascarpone.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 190</span>
+                <span class="badge bg-warning text-dark">Chef's Pick</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Cake"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>Dark Choco Lava Cake</h5>
+              </div>
+              <p>Warm molten chocolate cake served with creamy vanilla ice cream.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 175</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="menu-item-card fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              alt="Cheesecake"
+              class="menu-item-img"
+              loading="lazy" />
+            <div class="menu-item-info">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <div class="veg-icon"></div>
+                <h5>NY Cheesecake</h5>
+              </div>
+              <p>Creamy cheesecake with a buttery crust and smooth texture.</p>
+              <div class="menu-item-footer">
+                <span class="price">₱ 165</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-padding bg-light-cream">
+  <div class="container">
+    <div class="section-header text-center">
+      <p class="section-tag"><i class="fas fa-quote-left"></i> Testimonials</p>
+      <h2 class="section-title">What Our Guests Say</h2>
+    </div>
+
+    <div id="testimonialCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="testimonial-card text-center">
+                <div class="stars mb-3">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Bean & Brew has such a relaxing atmosphere. Their Kapeng Barako is strong, flavorful, and perfect for mornings before class."</p>
+                <div class="testimonial-author mt-4">
+                  <div>
+                    <strong>Angela Reyes</strong>
+                    <span>Davao City, Philippines</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="testimonial-card text-center">
+                <div class="stars mb-3">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"One of my favorite cafés in the city. The Spanish Latte is my go-to drink, and the staff always make you feel welcome."</p>
+                <div class="testimonial-author mt-4">
+                  <div>
+                    <strong>Joshua Dela Cruz</strong>
+                    <span>Tagum City, Philippines</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="testimonial-card text-center">
+                <div class="stars mb-3">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="testimonial-text">"A perfect place for meetings and study sessions. Great coffee, cozy seating, and a calm environment that makes you want to stay longer."</p>
+                <div class="testimonial-author mt-4">
+                  <div>
+                    <strong>Maria Santos</strong>
+                    <span>Digos City, Philippines</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev testimonial-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="carousel-control-next testimonial-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<button class="back-to-top" *ngIf="showBackToTop" (click)="scrollTop()">
+  <i class="fas fa-chevron-up"></i>
+</button>
