@@ -1,0 +1,65 @@
+<section class="page-hero">
+  <div class="container text-center">
+    <p class="section-tag"><i class="fas fa-user-edit"></i> Personal Reviews</p>
+    <h1>My Feedback</h1>
+    <p>View, edit, and manage your submitted feedback</p>
+  </div>
+</section>
+
+<section class="section-padding bg-light-cream">
+  <div class="container">
+    <div class="feedback-topbar">
+      <div>
+        <p class="section-tag mb-2"><i class="fas fa-folder-open"></i> Your Activity</p>
+        <h2 class="section-title mb-0">My Submitted Feedback</h2>
+      </div>
+
+      <a routerLink="/add-feedback" class="btn btn-primary-custom">
+        <i class="fas fa-plus me-2"></i>Add New
+      </a>
+    </div>
+
+    <div class="row g-4 mt-2" *ngIf="myFeedbackList.length > 0">
+      <div class="col-lg-6" *ngFor="let feedback of myFeedbackList">
+        <div class="feedback-card">
+          <div class="feedback-card-top">
+            <div>
+              <h4>{{ feedback.title }}</h4>
+              <span class="feedback-status">{{ feedback.status }}</span>
+            </div>
+            <span class="feedback-date">{{ feedback.date }}</span>
+          </div>
+
+          <div class="feedback-stars">
+            <i class="fas fa-star" *ngFor="let star of getStars(feedback.rating)"></i>
+          </div>
+
+          <p class="feedback-message">{{ feedback.message }}</p>
+
+          <div class="feedback-actions">
+            <a
+              class="btn btn-edit-custom"
+              [routerLink]="['/edit-feedback', feedback.id]"
+            >
+              <i class="fas fa-pen me-2"></i>Edit
+            </a>
+
+            <button
+              type="button"
+              class="btn btn-delete-custom"
+              (click)="deleteFeedback(feedback.id)"
+            >
+              <i class="fas fa-trash me-2"></i>Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="empty-feedback" *ngIf="myFeedbackList.length === 0">
+      <i class="fas fa-note-sticky"></i>
+      <h3>No personal feedback yet</h3>
+      <p>Your submitted reviews will appear here.</p>
+    </div>
+  </div>
+</section>

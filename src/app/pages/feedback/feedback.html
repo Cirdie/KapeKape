@@ -2,7 +2,7 @@
   <div class="container text-center">
     <p class="section-tag"><i class="fas fa-comment-dots"></i> Customer Thoughts</p>
     <h1>Feedback</h1>
-    <p>See what our guests are saying about Chai & Brew</p>
+    <p>See what our guests are saying about Bean & Brew</p>
   </div>
 </section>
 
@@ -15,21 +15,43 @@
         <h2 class="section-title mb-0">Customer Feedback</h2>
       </div>
 
-      <button class="btn btn-primary-custom" (click)="openForm()">
-        <i class="fas fa-plus me-2"></i>Create Feedback
-      </button>
+      <div class="feedback-actions">
+
+      <a
+  (click)="goToMyFeedback()"
+  class="btn btn-outline-custom"
+  style="cursor: pointer;"
+>
+  <i class="fas fa-user me-2"></i>My Feedback
+</a>
+      </div>
     </div>
 
     <div class="row g-4 mt-2" *ngIf="feedbackList.length > 0">
       <div class="col-lg-4 col-md-6" *ngFor="let feedback of feedbackList">
         <div class="feedback-card">
           <div class="feedback-card-top">
-            <div>
-              <h4>{{ feedback.title }}</h4>
-              <span class="feedback-name">{{ feedback.name }}</span>
-            </div>
-            <span class="feedback-date">{{ feedback.date }}</span>
-          </div>
+
+  <!-- LEFT SIDE -->
+  <div class="feedback-user">
+
+    <!-- AVATAR -->
+    <div class="feedback-avatar">
+      {{ feedback.name.charAt(0) }}
+    </div>
+
+    <!-- NAME + TITLE -->
+    <div class="feedback-user-info">
+      <h4>{{ feedback.title }}</h4>
+      <span class="feedback-name">{{ feedback.name }}</span>
+    </div>
+
+  </div>
+
+  <!-- DATE -->
+  <span class="feedback-date">{{ feedback.date }}</span>
+
+</div>
 
           <div class="feedback-stars">
             <i class="fas fa-star" *ngFor="let star of getStars(feedback.rating)"></i>
@@ -45,77 +67,8 @@
     <div class="empty-feedback" *ngIf="feedbackList.length === 0">
       <i class="fas fa-comments"></i>
       <h3>No feedback yet</h3>
-      <p>Be the first to share your experience at Chai & Brew.</p>
+      <p>Be the first to share your experience at Bean & Brew.</p>
     </div>
 
   </div>
 </section>
-
-<!-- Feedback Modal -->
-<div class="feedback-modal-backdrop" *ngIf="showForm" (click)="closeForm()">
-  <div class="feedback-modal" (click)="$event.stopPropagation()">
-    <div class="feedback-modal-header">
-      <h3>Create Feedback</h3>
-      <button type="button" class="feedback-close-btn" (click)="closeForm()">×</button>
-    </div>
-
-    <form (ngSubmit)="submitFeedback()">
-      <div class="mb-3">
-        <label class="form-label">Your Name</label>
-        <input
-          type="text"
-          class="form-control"
-          [(ngModel)]="formData.name"
-          name="name"
-          placeholder="Enter your name"
-        />
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Feedback Title</label>
-        <input
-          type="text"
-          class="form-control"
-          [(ngModel)]="formData.title"
-          name="title"
-          placeholder="Enter feedback title"
-        />
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Rating</label>
-        <select
-          class="form-select"
-          [(ngModel)]="formData.rating"
-          name="rating"
-        >
-          <option [ngValue]="5">5 - Excellent</option>
-          <option [ngValue]="4">4 - Very Good</option>
-          <option [ngValue]="3">3 - Good</option>
-          <option [ngValue]="2">2 - Fair</option>
-          <option [ngValue]="1">1 - Poor</option>
-        </select>
-      </div>
-
-      <div class="mb-4">
-        <label class="form-label">Message</label>
-        <textarea
-          class="form-control"
-          rows="5"
-          [(ngModel)]="formData.message"
-          name="message"
-          placeholder="Share your experience"
-        ></textarea>
-      </div>
-
-      <div class="feedback-modal-actions">
-        <button type="button" class="btn btn-outline-secondary" (click)="closeForm()">
-          Cancel
-        </button>
-        <button type="submit" class="btn btn-primary-custom">
-          Submit Feedback
-        </button>
-      </div>
-    </form>
-  </div>
-</div>

@@ -1,0 +1,69 @@
+<section class="page-hero">
+  <div class="container">
+    <p class="section-tag"><i class="fas fa-utensils"></i> Full Menu</p>
+    <h1>All Menu Items</h1>
+    <p>Explore everything we offer, organized by category</p>
+
+    <nav class="mt-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item"><a routerLink="/menu">Menu</a></li>
+        <li class="breadcrumb-item active">All</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<section class="section-padding category-page-section">
+  <div class="container">
+
+    <div class="category-top-actions">
+      <a routerLink="/menu" class="back-menu-link">
+        <i class="fas fa-arrow-left"></i> Back to Menu Categories
+      </a>
+    </div>
+
+    <!-- LOOP PER CATEGORY -->
+    <div *ngFor="let category of menu" class="mb-5">
+
+      <!-- CATEGORY TITLE -->
+      <div class="section-header mb-4">
+        <p class="section-tag">
+          <i [class]="category.icon"></i> Category
+        </p>
+        <h2 class="section-title">{{ category.title }}</h2>
+      </div>
+
+      <!-- ITEMS -->
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4" *ngFor="let item of category.items">
+          <div class="category-menu-card">
+            <div class="category-menu-image-wrap">
+              <img
+                [src]="item.image"
+                [alt]="item.name"
+                class="category-menu-image"
+              />
+            </div>
+
+            <div class="category-menu-body">
+              <h3>{{ item.name }}</h3>
+
+              <div class="category-menu-footer">
+                <span class="price">{{ item.price }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<button
+  class="back-to-top"
+  [class.visible]="showBackToTop"
+  (click)="scrollTop()">
+  <i class="fas fa-chevron-up"></i>
+</button>

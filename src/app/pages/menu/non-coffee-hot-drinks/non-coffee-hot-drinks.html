@@ -1,14 +1,14 @@
 <section class="page-hero">
   <div class="container">
-    <p class="section-tag"><i class="fas fa-fire"></i> Hot Beverages</p>
-    <h1>Hot Coffee</h1>
-    <p>Freshly brewed favorites served warm and rich</p>
+    <p class="section-tag"><i class="fas fa-mug-hot"></i> Warm Favorites</p>
+    <h1>Non-Coffee Hot Drinks</h1>
+    <p>Comforting hot beverages without coffee, perfect for cozy moments</p>
 
     <nav aria-label="breadcrumb" class="mt-3">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
         <li class="breadcrumb-item"><a routerLink="/menu">Menu</a></li>
-        <li class="breadcrumb-item active">Hot Coffee</li>
+        <li class="breadcrumb-item active">Non-Coffee Hot Drinks</li>
       </ol>
     </nav>
   </div>
@@ -26,8 +26,15 @@
       <div class="col-md-6 col-lg-4" *ngFor="let item of items">
         <div class="category-menu-card">
           <div class="category-menu-image-wrap">
-            <img [src]="item.image" [alt]="item.name" class="category-menu-image" loading="lazy" />
-            <span class="category-menu-badge" *ngIf="item.badge">{{ item.badge }}</span>
+            <img
+              [src]="item.image"
+              [alt]="item.name"
+              class="category-menu-image"
+              loading="lazy"
+            />
+            <span class="category-menu-badge" *ngIf="item.badge">
+              {{ item.badge }}
+            </span>
           </div>
 
           <div class="category-menu-body">

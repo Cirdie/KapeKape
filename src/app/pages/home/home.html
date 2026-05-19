@@ -6,41 +6,97 @@
     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
   </div>
 
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="carousel-bg" style="background: linear-gradient(rgba(30,20,10,0.6),rgba(30,20,10,0.6)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600') center/cover no-repeat;"></div>
-      <div class="carousel-caption text-start">
-        <p class="carousel-subtitle">Welcome to Bean & Brew Tagum</p>
-        <h1 class="carousel-title">Where Every Cup <br><span>Feels Like Home</span></h1>
-        <p class="carousel-desc">Enjoy handcrafted coffee, local favorites, and warm café moments inspired by Filipino taste and hospitality.</p>
-        <a href="/menu" class="btn btn-primary-custom me-3">Explore Menu</a>
-        <a href="/reservation" class="btn btn-outline-custom">Reserve a Table</a>
-      </div>
+<div class="carousel-inner">
+  <!-- SLIDE 1 -->
+  <div class="carousel-item active">
+    <div
+      class="carousel-bg"
+      style="background: linear-gradient(rgba(30,20,10,0.6), rgba(30,20,10,0.6)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600') center/cover no-repeat;">
     </div>
 
-    <div class="carousel-item">
-      <div class="carousel-bg" style="background: linear-gradient(rgba(30,20,10,0.6),rgba(30,20,10,0.6)), url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1600') center/cover no-repeat;"></div>
-      <div class="carousel-caption text-start">
-        <p class="carousel-subtitle">Our Signature Drinks</p>
-        <h1 class="carousel-title">Freshly Brewed <br><span>Every Single Day</span></h1>
-        <p class="carousel-desc">From bold espresso to creamy iced favorites, every drink is prepared with care by our passionate baristas.</p>
-        <a href="/menu" class="btn btn-primary-custom me-3">View Our Drinks</a>
-        <a href="/about" class="btn btn-outline-custom">Our Story</a>
-      </div>
-    </div>
+    <div class="carousel-caption text-start">
+      <p class="carousel-subtitle">Welcome to Bean & Brew Tagum</p>
+      <h1 class="carousel-title">
+        Where Every Cup <br><span>Feels Like Home</span>
+      </h1>
+      <p class="carousel-desc">
+        Enjoy handcrafted coffee, local favorites, and warm café moments inspired by Filipino taste and hospitality.
+      </p>
 
-    <div class="carousel-item">
-      <div class="carousel-bg" style="background: linear-gradient(rgba(30,20,10,0.6),rgba(30,20,10,0.6)), url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1600') center/cover no-repeat;"></div>
-      <div class="carousel-caption text-start">
-        <p class="carousel-subtitle">Comfort & Community</p>
-        <h1 class="carousel-title">Your Favorite <br><span>Neighborhood Café</span></h1>
-        <p class="carousel-desc">A cozy place to study, work, meet friends, or simply relax with your favorite brew in the heart of the city.</p>
-        <a href="/gallery" class="btn btn-primary-custom me-3">See Gallery</a>
-        <a href="/contact" class="btn btn-outline-custom">Visit Us</a>
-      </div>
+      <a routerLink="/menu" class="btn btn-primary-custom me-3">
+        Explore Menu
+      </a>
+
+      <!-- 🔥 FEEDBACK BUTTON -->
+      <button
+        type="button"
+        class="btn btn-outline-custom"
+        (click)="goToFeedback()">
+        Feedback
+      </button>
     </div>
   </div>
 
+  <!-- SLIDE 2 -->
+  <div class="carousel-item">
+    <div
+      class="carousel-bg"
+      style="background: linear-gradient(rgba(30,20,10,0.6), rgba(30,20,10,0.6)), url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1600') center/cover no-repeat;">
+    </div>
+
+    <div class="carousel-caption text-start">
+      <p class="carousel-subtitle">Our Signature Drinks</p>
+      <h1 class="carousel-title">
+        Freshly Brewed <br><span>Every Single Day</span>
+      </h1>
+      <p class="carousel-desc">
+        From bold espresso to creamy iced favorites, every drink is prepared with care by our passionate baristas.
+      </p>
+
+      <a routerLink="/menu" class="btn btn-primary-custom me-3">
+        View Our Drinks
+      </a>
+
+      <!-- 🔥 ALSO FEEDBACK -->
+      <button
+        type="button"
+        class="btn btn-outline-custom"
+        (click)="goToFeedback()">
+        Leave Feedback
+      </button>
+    </div>
+  </div>
+
+  <!-- SLIDE 3 -->
+  <div class="carousel-item">
+    <div
+      class="carousel-bg"
+      style="background: linear-gradient(rgba(30,20,10,0.6), rgba(30,20,10,0.6)), url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1600') center/cover no-repeat;">
+    </div>
+
+    <div class="carousel-caption text-start">
+      <p class="carousel-subtitle">Comfort & Community</p>
+      <h1 class="carousel-title">
+        Your Favorite <br><span>Neighborhood Café</span>
+      </h1>
+      <p class="carousel-desc">
+        A cozy place to study, work, meet friends, or simply relax with your favorite brew in the heart of the city.
+      </p>
+
+      <a routerLink="/gallery" class="btn btn-primary-custom me-3">
+        See Gallery
+      </a>
+
+      <!-- 🔥 ALSO FEEDBACK -->
+      <button
+        type="button"
+        class="btn btn-outline-custom"
+        (click)="goToFeedback()">
+        Share Feedback
+      </button>
+    </div>
+  </div>
+</div>
   <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </button>
@@ -83,7 +139,9 @@
     <div class="section-header text-center">
       <p class="section-tag"><i class="fas fa-star"></i> Featured Picks</p>
       <h2 class="section-title">Our Most Loved Brews</h2>
-      <p class="section-desc">From classic café favorites to refreshing iced drinks, there’s something for every coffee lover.</p>
+      <p class="section-desc">
+        From classic café favorites to refreshing iced drinks, there’s something for every coffee lover.
+      </p>
     </div>
 
     <div class="row g-4 mt-3">
@@ -93,7 +151,7 @@
         <div class="menu-card">
           <div class="menu-card-img">
             <img
-              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800"
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&q=80"
               alt="Kapeng Barako"
               class="img-fluid"
               loading="lazy" />
@@ -101,7 +159,10 @@
           </div>
           <div class="menu-card-body">
             <h4>Kapeng Barako</h4>
-            <p>A strong and aromatic Filipino coffee made from locally loved beans, perfect for a bold start to your day.</p>
+            <p>
+              A strong and aromatic Filipino coffee made from locally loved beans,
+              perfect for a bold start to your day.
+            </p>
             <div class="menu-footer">
               <span class="price">₱ 95</span>
             </div>
@@ -109,22 +170,25 @@
         </div>
       </div>
 
-      <!-- Iced Caramel Latte -->
+      <!-- Mocha Iced Latte -->
       <div class="col-md-4">
         <div class="menu-card">
           <div class="menu-card-img">
             <img
-              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
-              alt="Iced Caramel Latte"
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80"
+              alt="Mocha Iced Latte"
               class="img-fluid"
               loading="lazy" />
-            <span class="badge-tag new">New</span>
+            <span class="badge-tag new">Bestseller</span>
           </div>
           <div class="menu-card-body">
-            <h4>Iced Caramel Latte</h4>
-            <p>A smooth espresso-based drink blended with milk, ice, and caramel syrup for a sweet and refreshing finish.</p>
+            <h4>Mocha Iced Latte</h4>
+            <p>
+              Chocolate-infused iced latte for a perfect balance of coffee
+              and cocoa.
+            </p>
             <div class="menu-footer">
-              <span class="price">₱ 145</span>
+              <span class="price">₱ 175</span>
             </div>
           </div>
         </div>
@@ -135,17 +199,20 @@
         <div class="menu-card">
           <div class="menu-card-img">
             <img
-              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=200"
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80"
               alt="Spanish Latte"
               class="img-fluid"
               loading="lazy" />
-            <span class="badge-tag popular">Popular</span>
+            <span class="badge-tag popular">Bestseller</span>
           </div>
           <div class="menu-card-body">
             <h4>Spanish Latte</h4>
-            <p>A creamy and sweet espresso drink with milk and condensed milk, loved for its rich and silky flavor.</p>
+            <p>
+              A smooth espresso-based drink with creamy milk and a sweet
+              signature finish.
+            </p>
             <div class="menu-footer">
-              <span class="price">₱ 135</span>
+              <span class="price">₱ 185</span>
             </div>
           </div>
         </div>
@@ -154,7 +221,7 @@
     </div>
 
     <div class="text-center mt-5">
-      <a href="/menu" class="btn btn-primary-custom">
+      <a routerLink="/menu" class="btn btn-primary-custom">
         View Full Menu <i class="fas fa-arrow-right ms-2"></i>
       </a>
     </div>
@@ -190,41 +257,33 @@
   </div>
 </section>
 
-<!-- Video Section -->
 <section class="video-section">
-  <div class="container-fluid p-0 position-relative">
+  <div class="video-container">
+
+    <!-- Background Video -->
+    <video
+  class="bg-video"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="auto"
+  [attr.muted]="true">
+  <source src="/video/cafepromo.mp4" type="video/mp4">
+</video>
+
+    <!-- Overlay -->
     <div class="video-overlay">
       <div class="video-content text-center">
-        <p class="section-tag"><i class="fas fa-play-circle"></i> Watch</p>
         <h2>The Bean & Brew Experience</h2>
-        <p>See how we prepare your favorite café drinks and create a warm space for every guest</p>
-        <button class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal">
-          <i class="fas fa-play"></i>
-        </button>
+        <p>
+          See how we prepare your favorite café drinks and create a warm space for every guest
+        </p>
       </div>
     </div>
 
-    <video autoplay muted loop playsinline class="bg-video">
-      <source src="video/cafe promo.mp4" type="video/mp4" />
-    </video>
   </div>
 </section>
-
-<!-- Video Modal -->
-<div class="modal fade" id="videoModal" tabindex="-1">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content bg-dark">
-      <div class="modal-header border-0">
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body p-0">
-        <div class="ratio ratio-16x9">
-          <iframe src="video/cafe promo.mp4" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- Testimonials -->
 <section class="section-padding bg-light-cream">

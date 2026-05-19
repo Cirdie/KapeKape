@@ -1,0 +1,48 @@
+.video-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  min-height: 420px;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.video-content {
+  color: #fff;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.video-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.video-desc {
+  font-size: 1rem;
+  opacity: 0.9;
+}

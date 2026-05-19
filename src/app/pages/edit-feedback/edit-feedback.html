@@ -1,0 +1,92 @@
+<section class="page-hero">
+  <div class="container text-center">
+    <p class="section-tag">
+      <i class="fas fa-pen"></i>
+      Update Your Review
+    </p>
+    <h1>Edit Feedback</h1>
+    <p>Make changes to your submitted feedback</p>
+  </div>
+</section>
+
+<section class="section-padding bg-light-cream">
+  <div class="container">
+    <div class="add-feedback-wrapper">
+
+      <div class="add-feedback-topbar">
+        <div>
+          <p class="section-tag mb-2">
+            <i class="fas fa-file-pen"></i>
+            Edit Review Form
+          </p>
+          <h2 class="section-title mb-0">Update Feedback</h2>
+        </div>
+
+        <a routerLink="/my-feedback" class="btn btn-outline-custom">
+          <i class="fas fa-arrow-left me-2"></i>
+          Back to My Feedback
+        </a>
+      </div>
+
+      <div class="add-feedback-card">
+        <form (ngSubmit)="updateFeedback()">
+
+          <div class="feedback-form-grid one-column">
+            <div class="form-group">
+              <label class="form-label">Feedback Title</label>
+              <input
+                type="text"
+                class="form-control custom-input"
+                [(ngModel)]="formData.title"
+                name="title"
+                placeholder="Enter feedback title"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Rating</label>
+
+            <div class="star-rating">
+              <button
+                type="button"
+                class="star-btn"
+                *ngFor="let star of stars"
+                (click)="setRating(star)"
+                [class.active]="star <= formData.rating"
+              >
+                <i class="fas fa-star"></i>
+              </button>
+            </div>
+
+            <p class="rating-text">{{ formData.rating }} out of 5 stars</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Your Message</label>
+            <textarea
+              class="form-control custom-textarea"
+              rows="6"
+              [(ngModel)]="formData.message"
+              name="message"
+              placeholder="Update your feedback..."
+            ></textarea>
+          </div>
+
+          <div class="add-feedback-actions">
+            <a routerLink="/my-feedback" class="btn btn-light-custom">
+              <i class="fas fa-xmark me-2"></i>
+              Cancel
+            </a>
+
+            <button type="submit" class="btn btn-primary-custom">
+              <i class="fas fa-floppy-disk me-2"></i>
+              Save Changes
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
